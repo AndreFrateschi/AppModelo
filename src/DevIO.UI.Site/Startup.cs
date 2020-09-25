@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace DevIo.Site
+namespace DevIO.UI.Site
 {
     public class Startup
     {
@@ -16,7 +16,7 @@ namespace DevIo.Site
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_0);
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -31,9 +31,8 @@ namespace DevIo.Site
 
             app.UseMvc(routes =>
             {
-                routes.MapRoute("default", "{controller=Home}/{Action=Index}/{id?}");
+                routes.MapRoute("default","{controller=Home}/{action=Index}/{id?}");
             });
         }
     }
 }
-
