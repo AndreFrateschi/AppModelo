@@ -27,6 +27,8 @@ namespace DevIo.Site
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseStaticFiles();
+
             app.UseMvc(routes =>
             {
                 routes.MapRoute("default", "{controller=Home}/{Action=Index}/{id?}");
@@ -34,3 +36,4 @@ namespace DevIo.Site
         }
     }
 }
+
